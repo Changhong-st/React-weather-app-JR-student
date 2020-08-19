@@ -1,0 +1,10 @@
+.forecast-info{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forecast-info .forecastImg {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}

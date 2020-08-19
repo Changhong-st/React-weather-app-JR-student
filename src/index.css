@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(https://i.imgur.com/ZNFogrY.jpeg);
+  background-size: cover;  */
+  background-image:linear-gradient(to right, #e1b382,#2d545e);
 }
 
 code {
