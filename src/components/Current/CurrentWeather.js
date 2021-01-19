@@ -1,13 +1,24 @@
 import React from 'react'
+import WeatherItem from './components/WeatherItem/WeatherItem'
 import './current.css'
 
 export default function DisplayWeather(props){
-    const {location, temperature, description, max_temperature, min_temperature, wind_speed, windDirection, humidity, img} = props.weatherData;
+    const {
+        location, 
+        temperature, 
+        description, 
+        max_temperature, 
+        min_temperature, 
+        wind_speed, 
+        windDirection, 
+        humidity, 
+        img
+    } = props.weatherData;
     const weatherInfo = [
-        {key: 'Weather Description', value: description},
-        {key: 'Wind Speed', value: wind_speed},
-        {key: 'Wind Direction', value: windDirection},
-        {key: 'Humidity', value: humidity},
+        {title: 'Weather Description', value: description},
+        {title: 'Wind Speed', value: wind_speed},
+        {title: 'Wind Direction', value: windDirection},
+        {title: 'Humidity', value: humidity},
     ];
     const iconAddress = `https://openweathermap.org/img/wn/${img}@2x.png`;
     return (
@@ -28,10 +39,13 @@ export default function DisplayWeather(props){
             </div>
             <div className="row weather-info">
             {weatherInfo.map((i, index) => {
-                return <div key={index} className="col-md-3 weather-info">
-                    <h3>{i.key}</h3>
-                    <p>{i.value}</p>
-                </div>
+                return (
+                    <WeatherItem 
+                        title={i.title}
+                        value={i.value}
+                        key={index}
+                    />
+                )
             })}
             </div>            
         </div>
